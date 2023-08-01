@@ -1,8 +1,18 @@
 <!-- index.wxml -->
 <view class="container">
+    <view class="block">
+        <t-grid class="block" column="{{3}}" theme="card">
+            <t-grid-item text="竞赛" description="1天23小时33分" />
+            <t-grid-item text="联赛" description="1天23小时33分" />
+            <t-grid-item text="月卡结算" description="1天23小时33分" />
+            <t-grid-item text="突袭周末" description="1天23小时33分" />
+            <t-grid-item text="商人刷新" description="1天23小时33分" />
+            <t-grid-item text="赛季重置" description="1天23小时33分" />
+        </t-grid>
+    </view>
     <t-tabs sticky value="{{ tabValue }}" bind:change="onTabsChange" bind:click="onTabsClick" t-class="custom-tabs" t-class-content="custom-panel">
         <t-tab-panel label="{{ item.name }}" value="{{ index }}" wx:for="{{ unitData }}" wx:key="index">
-            <t-grid class="block" column="{{4}}">
+            <t-grid class="block" column="{{4}}" theme="card">
                 <t-grid-item wx:for="{{ item.children }}" wx:key="index" text="{{ item.name }}" image="{{ item.imgSrc }}" />
             </t-grid>
         </t-tab-panel>

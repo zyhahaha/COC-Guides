@@ -1,4 +1,10 @@
-<!--index.wxml-->
+<!-- index.wxml -->
 <view class="container">
-  <t-tag theme="primary">重要</t-tag>
+    <t-tabs sticky value="{{ tabValue }}" bind:change="onTabsChange" bind:click="onTabsClick" t-class="custom-tabs" t-class-content="custom-panel">
+        <t-tab-panel label="{{ item.name }}" value="{{ index }}" wx:for="{{ unitData }}" wx:key="index">
+            <view wx:for="{{ item.children }}" wx:key="index">
+                {{ item.name }}
+            </view>
+        </t-tab-panel>
+    </t-tabs>
 </view>

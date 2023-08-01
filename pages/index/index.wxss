@@ -4,3 +4,6 @@
   width: 100%;
   overflow: auto;
 }
+.block-test .t-grid-item__description.t-grid-item__description--large.t-grid-item__description--vertical {
+  color: red;
+}

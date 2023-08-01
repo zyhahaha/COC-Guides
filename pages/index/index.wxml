@@ -1,6 +1,6 @@
 <!-- index.wxml -->
 <view class="container">
-    <view class="block">
+    <view class="block-test">
         <t-grid class="block" column="{{3}}" theme="card">
             <t-grid-item text="竞赛" description="1天23小时33分" />
             <t-grid-item text="联赛" description="1天23小时33分" />

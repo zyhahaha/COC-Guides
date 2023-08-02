@@ -12,7 +12,7 @@ Page({
       return {
         label: v.name,
         prop: v.name,
-        width: 100
+        width: v.name.length * 35
       }
     })
     updateList.forEach(updateItemArr => {

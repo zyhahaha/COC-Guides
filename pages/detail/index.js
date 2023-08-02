@@ -1,11 +1,34 @@
 Page({
   data: {
-    unitDetail: {}
+    unitDetail: {},
+    tableHeader: [],
+    tableDataList: []
   },
   onLoad() {
     const unitDetail = wx.getStorageSync('unitDetail')
+    const tableDataList = []
+    const updateList = unitDetail.detail.update
+    const tableHeader = updateList[0].map(v => {
+      return {
+        label: v.name,
+        prop: v.name,
+        width: 100
+      }
+    })
+    updateList.forEach(updateItemArr => {
+      const obj = {}
+      updateItemArr.forEach(item => {
+        obj[item.name] = item.value
+      })
+      tableDataList.push(obj)
+    })
+
+    // console.log(tableHeader, tableDataList)
+
     this.setData({
-      unitDetail
+      tableHeader,
+      unitDetail,
+      tableDataList
     })
   }
 })

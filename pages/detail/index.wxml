@@ -11,4 +11,12 @@
             <t-grid-item text="{{ item.key }}" description="{{ item.value }}" wx:for="{{unitDetail.detail.attribute}}" />
         </t-grid>
     </view>
+    
+    <table-view 
+        headers="{{ tableHeader }}" 
+        data="{{ tableDataList }}" 
+        stripe="{{ true }}"
+        border="{{ false }}"
+        height="{{ '500rpx' }}"
+    />
 </view>

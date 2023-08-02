@@ -1,4 +1,5 @@
 .detail {
+    padding-bottom: 30rpx;
     width: 100%;
     overflow: auto;
 }

@@ -1,7 +1,7 @@
 <!-- index.wxml -->
 <view class="detail">
     <view style="padding-top: 30rpx; margin-bottom: 30rpx; text-align: center;">
-        <image src="/images/弓箭手.png" mode="aspectFit"></image>
+        <image src="{{ '/images/' + unitDetail.name + '.png' }}" mode="aspectFit"></image>
     </view>
     <view style="padding: 0rpx 30rpx; font-weight: bold; font-size: 28rpx; text-align: center;">
         {{ unitDetail.detail.description }}

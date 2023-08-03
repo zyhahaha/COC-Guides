@@ -1,4 +1,5 @@
 {
+  "navigationBarTitleText": "部落冲突数据查询",
   "usingComponents": {
     "t-tabs": "tdesign-miniprogram/tabs/tabs",
     "t-tab-panel": "tdesign-miniprogram/tab-panel/tab-panel",

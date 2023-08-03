@@ -30,5 +30,9 @@ Page({
       unitDetail,
       tableDataList
     })
+
+    wx.setNavigationBarTitle({
+      title: unitDetail.name
+    })
   }
 })

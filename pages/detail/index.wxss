@@ -1,5 +1,7 @@
 .detail {
-    padding-bottom: 30rpx;
     width: 100%;
     overflow: auto;
+}
+.detail .t-grid-item__content {
+    padding: 0rpx;
 }

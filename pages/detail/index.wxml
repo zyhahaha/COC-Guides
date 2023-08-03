@@ -1,13 +1,13 @@
 <!-- index.wxml -->
 <view class="detail">
     <view style="padding-top: 30rpx; margin-bottom: 30rpx; text-align: center;">
-        <image src="{{ 'http://119.96.189.81:7788/images/' + unitDetail.name + '.png' }}" mode="aspectFit"></image>
+        <image style="width: 300rpx; height: 380rpx;" src="{{ 'http://119.96.189.81:7788/images/' + unitDetail.name + '.png' }}" mode="aspectFit"></image>
     </view>
     <view style="padding: 0rpx 30rpx; font-weight: bold; font-size: 28rpx; text-align: center;">
         {{ unitDetail.detail.description }}
     </view>
-    <view>
-        <t-grid class="block" column="{{3}}" theme="card">
+    <view style="margin-bottom: 20rpx;">
+        <t-grid column="{{3}}" theme="card">
             <t-grid-item text="{{ item.key }}" description="{{ item.value }}" wx:for="{{unitDetail.detail.attribute}}" />
         </t-grid>
     </view>
@@ -17,6 +17,6 @@
         data="{{ tableDataList }}" 
         stripe="{{ true }}"
         border="{{ false }}"
-        height="{{ '500rpx' }}"
+        height="{{ '700rpx' }}"
     />
 </view>

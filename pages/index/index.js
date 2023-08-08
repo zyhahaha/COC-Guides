@@ -17,6 +17,11 @@ Page({
       })
     }
   },
+  onScanCode() {
+    wx.scanCode().then(res => {
+      // this.onGoSearch(res.result)
+    })
+  },
   onDetail(e) {
     let content = e.currentTarget.dataset.content
     wx.setStorageSync('unitDetail', content)

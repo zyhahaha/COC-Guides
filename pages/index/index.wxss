@@ -5,3 +5,29 @@
 /* .countdown .t-grid-item__description.t-grid-item__description--large.t-grid-item__description--vertical {
   color: red;
 } */
+
+.search {
+  display: flex;
+  flex: 1;
+  margin-left: 15rpx;
+  padding: 16rpx 0rpx 16rpx 30rpx;
+  /* padding-left: 15rpx; */
+  height: 40rpx;
+  background: #F5F5F5;
+  border-radius: 36rpx 36rpx 36rpx 36rpx;
+}
+
+.search .search-icon {
+  margin-top: 9rpx;
+  width: 28rpx;
+  height: 28rpx;
+  /* vertical-align: text-top; */
+}
+
+.search .search-input {
+  flex: 1;
+  display: inline-block;
+  margin-left: 10rpx;
+  font-size: 26rpx;
+  /* vertical-align: middle; */
+}

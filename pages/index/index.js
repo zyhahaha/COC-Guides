@@ -17,9 +17,18 @@ Page({
       })
     }
   },
+  onGoSearch(searchValue) {
+    let url = `/pages/search/search`
+    // if (!this.data.orderType) return;
+    if (typeof searchValue === 'string') url += `?searchValue=${searchValue}`
+
+    wx.navigateTo({
+      url,
+    })
+  },
   onScanCode() {
     wx.scanCode().then(res => {
-      // this.onGoSearch(res.result)
+      this.onGoSearch(res.result)
     })
   },
   onDetail(e) {
@@ -29,17 +38,9 @@ Page({
       url: '/pages/detail/index'
     })
   },
-  onHandlerDdvanced() {
-    console.log('xxx')
-  },
   onTabsChange(event) {
     this.setData({
       tabValue: event.detail.value,
     });
-    console.log(`Change tab, tab-panel value is ${event.detail.value}.`);
-  },
-
-  onTabsClick(event) {
-    console.log(`Click tab, tab-panel value is ${event.detail.value}.`);
-  },
+  }
 })

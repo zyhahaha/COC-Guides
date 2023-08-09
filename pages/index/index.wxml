@@ -18,7 +18,7 @@
             <t-grid-item text="赛季重置" description="1天23小时33分" /> -->
         </t-grid>
     </view>
-    <t-tabs sticky value="{{ tabValue }}" bind:change="onTabsChange" bind:click="onTabsClick" t-class="custom-tabs" t-class-content="custom-panel">
+    <t-tabs sticky value="{{ tabValue }}" bind:change="onTabsChange">
         <t-tab-panel label="{{ item.name }}" value="{{ index }}" wx:for="{{ unitData }}" wx:key="index">
             <t-grid column="{{4}}" theme="card">
                 <t-grid-item wx:for="{{ item.children }}" wx:key="index" text="{{ item.name }}" image="{{ 'http://119.96.189.81:7788/images/' + item.name + '.png' }}" bindtap="onDetail" data-content="{{item}}" />

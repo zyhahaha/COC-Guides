@@ -42,7 +42,10 @@ Page({
           obj[item.name] = updateText
         }
         if (item.name.includes('升级花费') && Number(item.value)) {
-          if (Number(item.value) % 10000 === 0) {
+          // if (Number(item.value) % 10000 === 0) {
+          //   obj[item.name] = `${item.value / 10000}万`
+          // }
+          if (Number(item.value) >= 10000) {
             obj[item.name] = `${item.value / 10000}万`
           }
         }

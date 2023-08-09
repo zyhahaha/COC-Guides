@@ -2,9 +2,9 @@
   width: 100%;
   overflow: auto;
 }
-/* .countdown .t-grid-item__description.t-grid-item__description--large.t-grid-item__description--vertical {
-  color: red;
-} */
+.countdown .t-grid-item__description.t-grid-item__description--large.t-grid-item__description--vertical {
+  color: #ff7440;
+}
 
 .search {
   display: flex;

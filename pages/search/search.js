@@ -1,3 +1,4 @@
+import { unitData } from '../../utils/data.js'
 Page({
 
     /**
@@ -5,6 +6,7 @@ Page({
      */
     data: {
         dataList: [],
+        searchResultList: [],
         keyword: ''
     },
 
@@ -12,6 +14,8 @@ Page({
      * 生命周期函数--监听页面加载
      */
     async onLoad(options) {
+        this.initData()
+
         const searchValue = options?.searchValue || ''
         this.setData({
             keyword: searchValue,
@@ -21,6 +25,17 @@ Page({
             wx.hideKeyboard()
             this.handleSearch()
         }
+    },
+    initData() {
+        // console.log('xxx', unitData.map(v => v.children))
+        const dataListTemp = []
+        unitData.map(v => v.children).forEach(v => {
+            dataListTemp.push(...v)
+        })
+        this.setData({
+            dataList: dataListTemp
+        })
+        // console.log('xxx', dataListTemp)
     },
     onDetail(e) {
         let content = e.currentTarget.dataset.content
@@ -40,6 +55,11 @@ Page({
         wx.showLoading({
             title: '加载中',
         })
+        
+        this.setData({
+            searchResultList: this.data.dataList.filter(v => v.name.includes(this.data.keyword))
+        })
+        
         setTimeout(() => {
             wx.hideLoading()
         }, 1000)

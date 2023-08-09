@@ -3,10 +3,10 @@
     <!-- 搜索 -->
     <view class="search">
         <image class="search-icon" src="/assets/icon/search.png" mode="" />
-        <input class="search-input" disabled placeholder="搜索兵种、法术、建筑、等" bindtap="onGoSearch" />
-        <view style="padding: 0rpx 30rpx;" bindtap="onScanCode">
+        <input class="search-input" disabled placeholder="搜索兵种、法术、建筑、英雄等" bindtap="onGoSearch" />
+        <!-- <view style="padding: 0rpx 30rpx;" bindtap="onScanCode">
             <image class="search-icon" src="/assets/icon/scan.png" mode="" />
-        </view>
+        </view> -->
     </view>
     <view class="countdown">
         <t-grid column="{{3}}" theme="card">

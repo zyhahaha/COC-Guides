@@ -3,7 +3,7 @@
         <!-- 搜索 -->
         <view class="search">
             <image class="search-icon" src="/assets/icon/search.png" mode="" />
-            <input class="search-input" value="{{keyword}}" bindinput="handleInput" bindconfirm="handleSearch" search auto-focus focus placeholder="搜索兵种、法术、建筑、等" />
+            <input class="search-input" value="{{keyword}}" bindinput="handleInput" bindconfirm="handleSearch" search auto-focus focus placeholder="搜索兵种、法术、建筑、英雄等" />
             <text bindtap="handleSearch" class="search-btn">搜索</text>
         </view>
     </view>

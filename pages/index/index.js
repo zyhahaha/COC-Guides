@@ -7,6 +7,8 @@ Page({
     drawerVisible: false,
     sideMenuList: [],
 
+    level: 15,
+
     // levelOptions: levelOptions,
     // keysOptions: {
     //   label: 'label',
@@ -57,7 +59,10 @@ Page({
     });
   },
   onHandleActionSelected(e) {
-    console.log(e.detail);
+    this.setData({
+      level: e.detail.selected.value
+    })
+    wx.setStorageSync('level', e.detail.selected.value)
   },
   onOpenDrawer() {
     this.setData({

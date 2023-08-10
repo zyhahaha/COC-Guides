@@ -3,6 +3,11 @@
     <!-- 搜索 -->
     <view class="search-wrap">
         <t-icon name="menu-fold" size="48rpx" style="margin-top: 10rpx;" bind:click="onOpenDrawer" />
+        <!-- <view style="width: 200rpx;">
+            <t-dropdown-menu>
+                <t-dropdown-item options="{{ levelOptions }}" default-value="{{ 2 }}" keys="{{ keysOptions }}" bindchange="onChangeLevel" />
+            </t-dropdown-menu>
+        </view> -->
         <view class="search">
             <image class="search-icon" src="/assets/icon/search.png" mode="" />
             <input class="search-input" disabled placeholder="搜索兵种、法术、建筑、英雄等" bindtap="onGoSearch" />
@@ -29,10 +34,5 @@
         </t-tab-panel>
     </t-tabs>
     <!-- 抽屉 -->
-    <t-drawer
-        visible="{{ drawerVisible }}"
-        placement="left"
-        items="{{ sideMenuList }}"
-        bind:item-click="onClickDrawerItem"
-    ></t-drawer>
+    <t-drawer visible="{{ drawerVisible }}" placement="left" items="{{ sideMenuList }}" bind:item-click="onClickDrawerItem"></t-drawer>
 </view>

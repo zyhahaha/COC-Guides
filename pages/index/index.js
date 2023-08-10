@@ -1,9 +1,17 @@
 import { unitData } from '../../utils/data.js'
+import { levelOptions } from './libs/const.js'
 
 Page({
   data: {
     drawerVisible: false,
     sideMenuList: [],
+
+    levelOptions: levelOptions,
+    keysOptions: {
+      label: 'label',
+      value: 'value'
+    },
+
     tabValue: 0,
     unitData: unitData,
 
@@ -27,6 +35,9 @@ Page({
     wx.navigateTo({
       url,
     })
+  },
+  onChangeLevel() {
+
   },
   onOpenDrawer() {
     this.setData({

@@ -24,6 +24,16 @@ Page({
     teamLeagueTitle: '',
     teamLeagueCountdown: ''
   },
+  onLoad() {
+    this.setData({
+      sideMenuList: this.data.unitData.map((v, index) => {
+        return {
+          title: v.name,
+          index
+        }
+      })
+    })
+  },
   onShow() {
     this.computePartyCountdownFn()
   },
@@ -44,8 +54,13 @@ Page({
       drawerVisible: true
     })
   },
-  onClickDrawerItem() {
-
+  onClickDrawerItem(e) {
+    this.setData({
+      tabValue: e.detail.index
+    })
+    this.setData({
+      drawerVisible: false
+    })
   },
   onScanCode() {
     wx.scanCode().then(res => {

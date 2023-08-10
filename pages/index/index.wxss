@@ -2,6 +2,11 @@
   width: 100%;
   overflow: auto;
 }
+
+.t-drawer__sidebar {
+  height: auto !important;
+}
+
 .countdown .t-grid-item__text {
   font-weight: bold;
   color: #0052d9 !important;

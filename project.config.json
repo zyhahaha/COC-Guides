@@ -38,7 +38,7 @@
             "disablePlugins": [],
             "outputPath": ""
         },
-        "ignoreUploadUnusedFiles": true,
+        "ignoreUploadUnusedFiles": false,
         "useStaticServer": true,
         "checkInvalidKey": true,
         "disableUseStrict": false,

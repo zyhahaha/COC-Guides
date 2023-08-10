@@ -1,3 +1,4 @@
+import ActionSheet, { ActionSheetTheme } from 'tdesign-miniprogram/action-sheet/index';
 import { unitData } from '../../utils/data.js'
 import { levelOptions } from './libs/const.js'
 
@@ -6,11 +7,11 @@ Page({
     drawerVisible: false,
     sideMenuList: [],
 
-    levelOptions: levelOptions,
-    keysOptions: {
-      label: 'label',
-      value: 'value'
-    },
+    // levelOptions: levelOptions,
+    // keysOptions: {
+    //   label: 'label',
+    //   value: 'value'
+    // },
 
     tabValue: 0,
     unitData: unitData,
@@ -47,7 +48,16 @@ Page({
     })
   },
   onChangeLevel() {
-
+    ActionSheet.show({
+      theme: ActionSheetTheme.List,
+      selector: '#t-action-sheet',
+      context: this,
+      description: '请选择大本营等级',
+      items: levelOptions,
+    });
+  },
+  onHandleActionSelected(e) {
+    console.log(e.detail);
   },
   onOpenDrawer() {
     this.setData({

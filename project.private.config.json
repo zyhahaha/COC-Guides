@@ -3,7 +3,7 @@
     "projectname": "COC-Guides",
     "setting": {
         "compileHotReLoad": true,
-        "autoAudits": true
+        "autoAudits": false
     },
     "condition": {
         "miniprogram": {

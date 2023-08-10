@@ -2,6 +2,8 @@ import { unitData } from '../../utils/data.js'
 
 Page({
   data: {
+    drawerVisible: false,
+    sideMenuList: [],
     tabValue: 0,
     unitData: unitData,
 
@@ -25,6 +27,14 @@ Page({
     wx.navigateTo({
       url,
     })
+  },
+  onOpenDrawer() {
+    this.setData({
+      drawerVisible: true
+    })
+  },
+  onClickDrawerItem() {
+
   },
   onScanCode() {
     wx.scanCode().then(res => {

@@ -1,12 +1,15 @@
 <!-- index.wxml -->
 <view class="container">
     <!-- 搜索 -->
-    <view class="search">
-        <image class="search-icon" src="/assets/icon/search.png" mode="" />
-        <input class="search-input" disabled placeholder="搜索兵种、法术、建筑、英雄等" bindtap="onGoSearch" />
-        <!-- <view style="padding: 0rpx 30rpx;" bindtap="onScanCode">
-            <image class="search-icon" src="/assets/icon/scan.png" mode="" />
-        </view> -->
+    <view class="search-wrap">
+        <t-icon name="menu-fold" size="48rpx" style="margin-top: 10rpx;" bind:click="onOpenDrawer" />
+        <view class="search">
+            <image class="search-icon" src="/assets/icon/search.png" mode="" />
+            <input class="search-input" disabled placeholder="搜索兵种、法术、建筑、英雄等" bindtap="onGoSearch" />
+            <!-- <view style="padding: 0rpx 30rpx;" bindtap="onScanCode">
+                <image class="search-icon" src="/assets/icon/scan.png" mode="" />
+            </view> -->
+        </view>
     </view>
     <view class="countdown">
         <t-grid column="{{3}}" theme="card">
@@ -25,4 +28,11 @@
             </t-grid>
         </t-tab-panel>
     </t-tabs>
+    <!-- 抽屉 -->
+    <t-drawer
+        visible="{{ drawerVisible }}"
+        placement="left"
+        items="{{ sideMenuList }}"
+        bind:item-click="onClickDrawerItem"
+    ></t-drawer>
 </view>

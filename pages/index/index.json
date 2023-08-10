@@ -1,6 +1,8 @@
 {
   "navigationBarTitleText": "部落冲突数据查询",
   "usingComponents": {
+    "t-icon": "tdesign-miniprogram/icon/icon",
+    "t-drawer": "tdesign-miniprogram/drawer/drawer",
     "t-tabs": "tdesign-miniprogram/tabs/tabs",
     "t-tab-panel": "tdesign-miniprogram/tab-panel/tab-panel",
     "t-grid": "tdesign-miniprogram/grid/grid",

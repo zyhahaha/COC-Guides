@@ -3,8 +3,8 @@
     <view style="padding-top: 30rpx; margin-bottom: 30rpx; text-align: center;">
         <image style="width: 300rpx; height: 380rpx;" src="{{ 'http://119.96.189.81:7788/images/' + unitDetail.name + '.png' }}" mode="aspectFit"></image>
     </view>
-    <view style="padding: 20rpx; color: #ed4014; font-size: 28rpx; text-align: center;">
-        大本营{{ level }}级：{{ unitDetail.name }}最高可以升级到xxx级
+    <view style="padding: 20rpx; color: #ed4014; font-size: 28rpx; text-align: center;" wx:if="{{levelUpperLimit}}">
+        大本营{{ level }}级：{{ unitDetail.name }}最高可以升级到{{ levelUpperLimit }}级
     </view>
     <view style="padding: 0rpx 30rpx; font-weight: bold; font-size: 28rpx; text-align: center;">
         {{ unitDetail.detail.description }}

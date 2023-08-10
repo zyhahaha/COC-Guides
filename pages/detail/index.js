@@ -14,11 +14,13 @@ Page({
   data: {
     unitDetail: {},
     level: 15,
+    levelUpperLimit: 0,
     tableHeader: [],
     tableDataList: []
   },
   onLoad() {
-    const level = wx.getStorageSync('level') || 15
+    const currentLevel = wx.getStorageSync('level') || 15
+    let levelUpperLimit = 0
     const unitDetail = wx.getStorageSync('unitDetail')
     const tableDataList = []
     const updateList = unitDetail.detail.update
@@ -53,12 +55,19 @@ Page({
         }
       })
       tableDataList.push(obj)
+
+      // 计算当前大本营等级下可升级的最大等级
+      const baseCampLevel = Number(obj['所需大本等级'])
+      const unitLevel = Number(obj['等级'])
+      if (baseCampLevel <= currentLevel && baseCampLevel && unitLevel) {
+        if (levelUpperLimit < unitLevel) {
+          levelUpperLimit = unitLevel
+        }
+      }
     })
-
-    // console.log(tableHeader, tableDataList)
-
     this.setData({
-      level,
+      level: currentLevel,
+      levelUpperLimit,
       tableHeader,
       unitDetail,
       tableDataList

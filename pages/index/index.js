@@ -56,13 +56,13 @@ Page({
     const seconds = nowDate.getSeconds()
 
     if (week === 0) week = 7
-    if (week > 5 || (week === 5 && hours >= 16)) {
+    if (week > 5 || (week === 5 && hours >= 15)) {
       attackWeekendTitle = '突袭周末结束'
       let countdownDays = Math.abs(week - 7)
       let countdownHours = 24 - hours
       let countdownMinutes = 60 - minutes
       let countdownSeconds = 60 - seconds
-      countdownHours = countdownHours + 16
+      countdownHours = countdownHours + 15
 
       if (seconds > 0) countdownMinutes = countdownMinutes - 1
       if (minutes > 0) countdownHours = countdownHours - 1
@@ -77,7 +77,7 @@ Page({
       let countdownHours = 24 - hours
       let countdownMinutes = 60 - minutes
       let countdownSeconds = 60 - seconds
-      countdownHours = countdownHours + 16
+      countdownHours = countdownHours + 15
 
       if (seconds > 0) countdownMinutes = countdownMinutes - 1
       if (minutes > 0) countdownHours = countdownHours - 1

@@ -2,8 +2,13 @@
   width: 100%;
   overflow: auto;
 }
-.countdown .t-grid-item__description.t-grid-item__description--large.t-grid-item__description--vertical {
-  color: #ff7440;
+.countdown .t-grid-item__text {
+  font-weight: bold;
+  color: #0052d9 !important;
+}
+.countdown .t-grid-item__description {
+  /* color: #0052d9; */
+  color: rgba(0, 0, 0, 0.9);
 }
 
 .search {

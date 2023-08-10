@@ -3,7 +3,8 @@
     <!-- 搜索 -->
     <view class="search-wrap">
         <t-icon name="menu-fold" size="48rpx" style="margin-top: 10rpx;" bind:click="onOpenDrawer" />
-        <t-icon name="setting" size="48rpx" style="margin-top: 10rpx;" bind:click="onChangeLevel" />
+        <!-- <t-icon name="setting" size="48rpx" style="margin-top: 10rpx;" bind:click="onChangeLevel" /> -->
+        <view bindtap="onChangeLevel" style="width: 100rpx; height: 70rpx; line-height: 70rpx; text-align: center;">{{ level }}本</view>
         <!-- <view style="width: 200rpx;">
             <t-dropdown-menu>
                 <t-dropdown-item options="{{ levelOptions }}" default-value="{{ 2 }}" keys="{{ keysOptions }}" bindchange="onChangeLevel" />

@@ -13,10 +13,12 @@ function formatTimeFn(mss){
 Page({
   data: {
     unitDetail: {},
+    level: 15,
     tableHeader: [],
     tableDataList: []
   },
   onLoad() {
+    const level = wx.getStorageSync('level') || 15
     const unitDetail = wx.getStorageSync('unitDetail')
     const tableDataList = []
     const updateList = unitDetail.detail.update
@@ -56,6 +58,7 @@ Page({
     // console.log(tableHeader, tableDataList)
 
     this.setData({
+      level,
       tableHeader,
       unitDetail,
       tableDataList

@@ -112,7 +112,7 @@ Page({
     const seconds = nowDate.getSeconds()
 
     if (week === 0) week = 7
-    if (week > 5 || (week === 5 && hours >= 15)) {
+    if (week > 5 || (week === 5 && hours >= 15) || (week === 1 && hours < 15)) {
       attackWeekendTitle = '突袭周末结束'
       let countdownDays = Math.abs(week - 7)
       let countdownHours = 24 - hours
@@ -125,6 +125,10 @@ Page({
       if (countdownHours >= 24) {
         countdownDays = countdownDays + 1
         countdownHours = countdownHours - 24
+      }
+
+      if (week === 1) {
+        countdownDays = 0
       }
       attackWeekendCountdown = `${countdownDays}天${countdownHours}小时${countdownMinutes}分`
     } else {
@@ -150,7 +154,7 @@ Page({
     })
   },
   getTeamLeagueFn() {
-    // 每月1号下午16点开始；13号16点结束（TODO::: 有问题）
+    // 每月1号下午16点开始；11号16点结束
     function getCurrentMonthDate() {
       // 获取当前月有多少天
       let date = new Date();
@@ -169,9 +173,9 @@ Page({
     const minutes = nowDate.getMinutes()
     const seconds = nowDate.getSeconds()
 
-    if ((dateNumber < 11 && dateNumber > 1) || (dateNumber === 11 && hours <= 16) || (dateNumber === 1 && hours >= 16)) {
+    if ((dateNumber < 11 && dateNumber > 1) || (dateNumber === 1 && hours >= 16) || (dateNumber === 11 && hours < 16)) {
       teamLeagueTitle = '联赛结束'
-      let countdownDays = Math.abs(dateNumber - 10)
+      let countdownDays = Math.abs(dateNumber - 11)
       let countdownHours = 24 - hours
       let countdownMinutes = 60 - minutes
       let countdownSeconds = 60 - seconds
@@ -182,6 +186,10 @@ Page({
       if (countdownHours >= 24) {
         countdownDays = countdownDays + 1
         countdownHours = countdownHours - 24
+      }
+
+      if (dateNumber === 11) {
+        countdownDays = 0
       }
       teamLeagueCountdown = `${countdownDays}天${countdownHours}小时${countdownMinutes}分`
     } else {
@@ -207,7 +215,7 @@ Page({
     })
   },
   getTeamRaceFn() {
-    // 每月22号下午16点开始；7天后16点结束（TODO::: 有问题）
+    // 每月22号下午16点开始；28号16点结束
     let teamRaceTitle = '竞赛开始'
     let teamRaceCountdown = ''
 
@@ -217,9 +225,9 @@ Page({
     const minutes = nowDate.getMinutes()
     const seconds = nowDate.getSeconds()
 
-    if (dateNumber > 21 || (dateNumber === 21 && hours >= 16)) {
+    if ((dateNumber > 21 && dateNumber < 28) || (dateNumber === 21 && hours >= 16) || (dateNumber === 28 && hours < 16)) {
       teamRaceTitle = '竞赛结束'
-      let countdownDays = Math.abs(dateNumber - 7)
+      let countdownDays = Math.abs(dateNumber - 6)
       let countdownHours = 24 - hours
       let countdownMinutes = 60 - minutes
       let countdownSeconds = 60 - seconds
@@ -231,8 +239,11 @@ Page({
         countdownDays = countdownDays + 1
         countdownHours = countdownHours - 24
       }
-      // teamRaceCountdown = `${countdownDays}天${countdownHours}小时${countdownMinutes}分`
-      teamRaceCountdown = ''
+
+      if (dateNumber === 28) {
+        countdownDays = 0
+      }
+      teamRaceCountdown = `${countdownDays}天${countdownHours}小时${countdownMinutes}分`
     } else {
       teamRaceTitle = '竞赛开始'
       let countdownDays = 21 - dateNumber

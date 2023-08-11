@@ -24,6 +24,8 @@ Page({
     const unitDetail = wx.getStorageSync('unitDetail')
     const tableDataList = []
     const updateList = unitDetail.detail.update
+
+    // tableHeader
     const tableHeader = updateList[0].map(v => {
       const headerItemObj = {
         label: v.name,
@@ -35,6 +37,22 @@ Page({
       }
       return headerItemObj
     })
+
+    // 计算tableItem宽度
+    const windowWidth = wx.getSystemInfoSync().windowWidth
+    const tableWidthSum = tableHeader.map(v => v.width).reduce((prev, next) => {
+      return prev + next;
+    })
+    if (tableWidthSum < windowWidth * 2) {
+      const tableItemWidth = windowWidth / tableHeader.length
+      tableHeader.forEach(v => {
+        if (v.width < tableItemWidth * 2) {
+          v.width = tableItemWidth * 2
+        }
+      })
+    }
+
+    // tableDataList
     updateList.forEach(updateItemArr => {
       const obj = {}
       updateItemArr.forEach(item => {

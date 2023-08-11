@@ -70,7 +70,8 @@ Page({
       levelUpperLimit,
       tableHeader,
       unitDetail,
-      tableDataList
+      tableDataList,
+      tableHeight: wx.getSystemInfoSync().windowHeight - wx.getSystemInfoSync().statusBarHeight + 'px'
     })
 
     wx.setNavigationBarTitle({

@@ -8,10 +8,13 @@ Page({
     attackWeekendTitle: '',
     attackWeekendCountdown: '',
 
+    teamRaceTitle: '',
+    teamRaceCountdown: '',
+
     teamLeagueTitle: '',
     teamLeagueCountdown: ''
   },
-  onLoad() {
+  onShow() {
     this.computePartyCountdownFn()
   },
   onGoSearch(searchValue) {
@@ -44,6 +47,7 @@ Page({
     // 活动倒计时
     this.getAttackWeekendFn()
     this.getTeamLeagueFn()
+    this.getTeamRaceFn()
   },
   getAttackWeekendFn() {
     let attackWeekendTitle = '突袭周末开始'
@@ -159,7 +163,7 @@ Page({
     const minutes = nowDate.getMinutes()
     const seconds = nowDate.getSeconds()
 
-    if (dateNumber > 22 || (dateNumber === 22 && hours >= 16)) {
+    if (dateNumber > 21 || (dateNumber === 21 && hours >= 16)) {
       teamRaceTitle = '竞赛结束'
       let countdownDays = Math.abs(dateNumber - 7)
       let countdownHours = 24 - hours
@@ -173,10 +177,11 @@ Page({
         countdownDays = countdownDays + 1
         countdownHours = countdownHours - 24
       }
-      teamRaceCountdown = `${countdownDays}天${countdownHours}小时${countdownMinutes}分`
+      // teamRaceCountdown = `${countdownDays}天${countdownHours}小时${countdownMinutes}分`
+      teamRaceCountdown = ''
     } else {
       teamRaceTitle = '竞赛开始'
-      let countdownDays = 4 - dateNumber
+      let countdownDays = 21 - dateNumber
       let countdownHours = 24 - hours
       let countdownMinutes = 60 - minutes
       let countdownSeconds = 60 - seconds

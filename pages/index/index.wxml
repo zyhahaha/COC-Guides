@@ -9,9 +9,9 @@
         </view> -->
     </view>
     <view class="countdown">
-        <t-grid column="{{2}}" theme="card">
+        <t-grid column="{{3}}" theme="card">
             <t-grid-item text="{{ attackWeekendTitle }}" description="{{ attackWeekendCountdown }}" />
-            <!-- <t-grid-item text="竞赛" description="1天23小时33分" /> -->
+            <t-grid-item text="{{ teamRaceTitle }}" description="{{ teamRaceCountdown }}" />
             <t-grid-item text="{{ teamLeagueTitle }}" description="{{ teamLeagueCountdown }}" />
             <!-- <t-grid-item text="月卡结算" description="1天23小时33分" />
             <t-grid-item text="商人刷新" description="1天23小时33分" />

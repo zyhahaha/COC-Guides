@@ -50,6 +50,7 @@ Page({
     this.getTeamRaceFn()
   },
   getAttackWeekendFn() {
+    // 每周五下午15点开始；下周一下午15点结束
     let attackWeekendTitle = '突袭周末开始'
     let attackWeekendCountdown = ''
 
@@ -98,6 +99,7 @@ Page({
     })
   },
   getTeamLeagueFn() {
+    // 每月1号下午16点开始；13号16点结束（TODO::: 有问题）
     function getCurrentMonthDate() {
       // 获取当前月有多少天
       let date = new Date();
@@ -154,6 +156,7 @@ Page({
     })
   },
   getTeamRaceFn() {
+    // 每月22号下午16点开始；7天后16点结束（TODO::: 有问题）
     let teamRaceTitle = '竞赛开始'
     let teamRaceCountdown = ''
 

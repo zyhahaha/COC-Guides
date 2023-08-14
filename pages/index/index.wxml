@@ -10,7 +10,7 @@
     </view>
     <view class="countdown">
         <t-grid column="{{3}}" theme="card">
-            <t-grid-item text="突袭周末" description="1天23小时33分" />
+            <t-grid-item text="{{ attackWeekendTitle }}" description="{{ attackWeekendCountdown }}" />
             <t-grid-item text="竞赛" description="1天23小时33分" />
             <t-grid-item text="联赛" description="1天23小时33分" />
             <!-- <t-grid-item text="月卡结算" description="1天23小时33分" />

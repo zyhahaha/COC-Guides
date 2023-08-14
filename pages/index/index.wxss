@@ -19,6 +19,7 @@
 .search-wrap {
   display: flex;
   padding: 24rpx 30rpx;
+  padding-top: 0rpx;
   background-color: #fff;
   z-index: 99;
 }

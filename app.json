@@ -2,8 +2,7 @@
   "lazyCodeLoading": "requiredComponents",
   "pages":[
     "pages/index/index",
-    "pages/detail/index",
-    "pages/search/search"
+    "pages/detail/index"
   ],
   "window":{
     "backgroundTextStyle":"light",

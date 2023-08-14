@@ -40,15 +40,15 @@ Page({
   onShow() {
     this.computePartyCountdownFn()
   },
-  onGoSearch(searchValue) {
-    let url = `/pages/search/search`
-    // if (!this.data.orderType) return;
-    if (typeof searchValue === 'string') url += `?searchValue=${searchValue}`
+  // onGoSearch(searchValue) {
+  //   let url = `/pages/search/search`
+  //   // if (!this.data.orderType) return;
+  //   if (typeof searchValue === 'string') url += `?searchValue=${searchValue}`
 
-    wx.navigateTo({
-      url,
-    })
-  },
+  //   wx.navigateTo({
+  //     url,
+  //   })
+  // },
   onChangeLevel() {
     ActionSheet.show({
       theme: ActionSheetTheme.List,

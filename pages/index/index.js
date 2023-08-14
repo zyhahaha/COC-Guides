@@ -71,6 +71,9 @@ Page({
       let countdownMinutes = 60 - minutes
       let countdownSeconds = 60 - seconds
       countdownHours = countdownHours + 16
+
+      if (seconds > 0) countdownMinutes = countdownMinutes - 1
+      if (minutes > 0) countdownHours = countdownHours - 1
       if (countdownHours >= 24) {
         countdownDays = countdownDays + 1
         countdownHours = countdownHours - 24

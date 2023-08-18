@@ -54,11 +54,14 @@ Page({
     if (week === 0) week = 7
     if (week > 5 || (week === 5 && hours >= 16)) {
       attackWeekendTitle = '突袭周末结束'
-      let countdownDays = week - 5
+      let countdownDays = Math.abs(week - 7)
       let countdownHours = 24 - hours
       let countdownMinutes = 60 - minutes
       let countdownSeconds = 60 - seconds
       countdownHours = countdownHours + 16
+
+      if (seconds > 0) countdownMinutes = countdownMinutes - 1
+      if (minutes > 0) countdownHours = countdownHours - 1
       if (countdownHours >= 24) {
         countdownDays = countdownDays + 1
         countdownHours = countdownHours - 24

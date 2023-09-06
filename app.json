@@ -2,6 +2,7 @@
   "lazyCodeLoading": "requiredComponents",
   "pages":[
     "pages/index/index",
+    "pages/dark/index",
     "pages/detail/index"
   ],
   "window":{

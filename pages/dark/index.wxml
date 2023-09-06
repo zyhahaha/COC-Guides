@@ -3,31 +3,16 @@
     <!-- 搜索 -->
     <view class="search-wrap">
         <t-icon name="menu-fold" size="48rpx" style="margin-top: 24rpx;" bind:click="onOpenDrawer" />
-        <!-- <t-icon name="setting" size="48rpx" style="margin-top: 10rpx;" bind:click="onChangeLevel" /> -->
         <view bindtap="onChangeLevel" style="width: 100%; height: 70rpx; line-height: 66rpx; text-align: center;">
             大本营等级：{{ level }}本
             <t-icon name="caret-down-small" size="48rpx" style="display: inline-block; position: relative; top: 5px; left: -2px; margin-top: 10rpx;" bind:click="onChangeLevel" />
         </view>
-        <t-icon name="moon" size="48rpx" style="margin-top: 24rpx;" bind:click="onMoon" />
-        
-        <!-- <view style="width: 200rpx;">
-            <t-dropdown-menu>
-                <t-dropdown-item options="{{ levelOptions }}" default-value="{{ 2 }}" keys="{{ keysOptions }}" bindchange="onChangeLevel" />
-            </t-dropdown-menu>
-        </view> -->
-        <!-- <view class="search">
-            <image class="search-icon" src="/assets/icon/search.png" mode="" />
-            <input class="search-input" disabled placeholder="搜索兵种、法术、建筑、英雄等" bindtap="onGoSearch" />
-        </view> -->
     </view>
     <view class="countdown">
         <t-grid column="{{3}}" theme="card">
             <t-grid-item text="{{ attackWeekendTitle }}" description="{{ attackWeekendCountdown }}" />
             <t-grid-item text="{{ teamRaceTitle }}" description="{{ teamRaceCountdown }}" />
             <t-grid-item text="{{ teamLeagueTitle }}" description="{{ teamLeagueCountdown }}" />
-            <!-- <t-grid-item text="月卡结算" description="1天23小时33分" />
-            <t-grid-item text="商人刷新" description="1天23小时33分" />
-            <t-grid-item text="赛季重置" description="1天23小时33分" /> -->
         </t-grid>
     </view>
     <t-tabs sticky swipeable value="{{ tabValue }}" bind:change="onTabsChange">

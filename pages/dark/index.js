@@ -7,13 +7,7 @@ Page({
     drawerVisible: false,
     sideMenuList: [],
 
-    level: 15,
-
-    // levelOptions: levelOptions,
-    // keysOptions: {
-    //   label: 'label',
-    //   value: 'value'
-    // },
+    level: 10,
 
     tabValue: 0,
     unitData: unitData,
@@ -40,15 +34,6 @@ Page({
   onShow() {
     this.computePartyCountdownFn()
   },
-  // onGoSearch(searchValue) {
-  //   let url = `/pages/search/search`
-  //   // if (!this.data.orderType) return;
-  //   if (typeof searchValue === 'string') url += `?searchValue=${searchValue}`
-
-  //   wx.navigateTo({
-  //     url,
-  //   })
-  // },
   onChangeLevel() {
     ActionSheet.show({
       theme: ActionSheetTheme.List,
@@ -80,11 +65,6 @@ Page({
   onScanCode() {
     wx.scanCode().then(res => {
       this.onGoSearch(res.result)
-    })
-  },
-  onMoon(e) {
-    wx.navigateTo({
-      url: '/pages/dark/index'
     })
   },
   onDetail(e) {

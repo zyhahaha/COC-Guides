@@ -29,7 +29,7 @@ Page({
   },
   onLoad() {
     this.setData({
-      level: wx.getStorageSync('level'),
+      level: wx.getStorageSync('level') || 15,
       sideMenuList: this.data.unitData.map((v, index) => {
         return {
           title: v.name,

@@ -91,7 +91,7 @@ Page({
     let content = e.currentTarget.dataset.content
     wx.setStorageSync('unitDetail', content)
     wx.navigateTo({
-      url: '/pages/detail/index'
+      url: '/pages/detail/index?urlSource=home'
     })
   },
   onTabsChange(event) {

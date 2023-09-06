@@ -10,8 +10,15 @@ function formatTimeFn(mss){
   return timeText
 }
 
+const hostMap = {
+  home: 'http://119.96.189.81:7788/images/',
+  dark: 'http://119.96.189.81:7788/dark-images/'
+}
+
 Page({
   data: {
+    urlSource: 'home',
+    imageUrlHost: '',
     unitDetail: {},
     level: 15,
     levelUpperLimit: 0,
@@ -19,12 +26,21 @@ Page({
     tableDataList: [],
     tableHeight: 0
   },
-  onLoad() {
-    const currentLevel = wx.getStorageSync('level') || 15
+  onLoad(options) {
+    const urlSource = options.urlSource
+    const storageKey = { home: 'level', dark: 'dark-level' }[urlSource]
+    const defaultLevel = { home: 15, dark: 10 }[urlSource]
+    const currentLevel = wx.getStorageSync(storageKey) || defaultLevel
+
     let levelUpperLimit = 0
     const unitDetail = wx.getStorageSync('unitDetail')
     const tableDataList = []
     const updateList = unitDetail.detail.update
+
+    this.setData({
+      urlSource,
+      imageUrlHost: hostMap[urlSource]
+    })
 
     // tableHeader
     const tableHeader = updateList[0].map(v => {

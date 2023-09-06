@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "部落冲突数据查询",
+  "navigationBarTitleText": "夜世界数据查询",
   "usingComponents": {
     "t-icon": "tdesign-miniprogram/icon/icon",
     "t-drawer": "tdesign-miniprogram/drawer/drawer",

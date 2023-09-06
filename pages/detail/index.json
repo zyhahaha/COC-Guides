@@ -2,6 +2,6 @@
   "usingComponents": {
     "t-grid": "tdesign-miniprogram/grid/grid",
     "t-grid-item": "tdesign-miniprogram/grid-item/grid-item",
-    "table-view": "../../components/miniprogram-table-component"
+    "table-view": "/components/table/index"
   }
 }

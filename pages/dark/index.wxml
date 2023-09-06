@@ -8,13 +8,6 @@
             <t-icon name="caret-down-small" size="48rpx" style="display: inline-block; position: relative; top: 5px; left: -2px; margin-top: 10rpx;" bind:click="onChangeLevel" />
         </view>
     </view>
-    <view class="countdown">
-        <t-grid column="{{3}}" theme="card">
-            <t-grid-item text="{{ attackWeekendTitle }}" description="{{ attackWeekendCountdown }}" />
-            <t-grid-item text="{{ teamRaceTitle }}" description="{{ teamRaceCountdown }}" />
-            <t-grid-item text="{{ teamLeagueTitle }}" description="{{ teamLeagueCountdown }}" />
-        </t-grid>
-    </view>
     <t-tabs sticky swipeable value="{{ tabValue }}" bind:change="onTabsChange">
         <t-tab-panel label="{{ item.name }}" value="{{ index }}" wx:for="{{ unitData }}" wx:key="index">
             <t-grid column="{{4}}" theme="card">

@@ -112,5 +112,10 @@ Page({
     wx.setNavigationBarTitle({
       title: unitDetail.name
     })
+
+    wx.showShareMenu({
+      withShareTicket: true,
+      menus: ['shareAppMessage', 'shareTimeline']
+    })
   }
 })

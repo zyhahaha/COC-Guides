@@ -15,11 +15,12 @@
         </t-grid>
     </view>
     
-    <table-view 
+    <table-view
+        wx:if="{{ tableHeight }}"
         headers="{{ tableHeader }}" 
         data="{{ tableDataList }}" 
         stripe="{{ true }}"
         border="{{ false }}"
-        height="{{ tableHeight }}"
+        height="{{ tableHeight - 5 + 'px' }}"
     />
 </view>

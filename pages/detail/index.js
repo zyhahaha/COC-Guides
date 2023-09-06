@@ -16,7 +16,8 @@ Page({
     level: 15,
     levelUpperLimit: 0,
     tableHeader: [],
-    tableDataList: []
+    tableDataList: [],
+    tableHeight: 0
   },
   onLoad() {
     const currentLevel = wx.getStorageSync('level') || 15
@@ -89,7 +90,7 @@ Page({
       tableHeader,
       unitDetail,
       tableDataList,
-      tableHeight: wx.getSystemInfoSync().windowHeight - wx.getSystemInfoSync().statusBarHeight + 'px'
+      tableHeight: wx.getSystemInfoSync().windowHeight - wx.getSystemInfoSync().statusBarHeight
     })
 
     wx.setNavigationBarTitle({

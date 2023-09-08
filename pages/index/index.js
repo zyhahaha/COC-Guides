@@ -209,7 +209,7 @@ Page({
       teamLeagueCountdown = `${countdownDays}天${countdownHours}小时${countdownMinutes}分`
     } else {
       teamLeagueTitle = '联赛开始'
-      let countdownDays = getCurrentMonthDate() - dateNumber
+      let countdownDays = getCurrentMonthDate() - dateNumber + 1
       let countdownHours = 16 - hours
       let countdownMinutes = 60 - minutes
       let countdownSeconds = 60 - seconds

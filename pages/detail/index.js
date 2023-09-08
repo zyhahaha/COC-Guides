@@ -43,7 +43,7 @@ Page({
     })
 
     // tableHeader
-    const tableHeader = updateList[0].map(v => {
+    const tableHeader = updateList[0] && updateList[0].map(v => {
       const headerItemObj = {
         label: v.name,
         prop: v.name,
@@ -53,11 +53,11 @@ Page({
         headerItemObj.width = 220
       }
       return headerItemObj
-    })
+    }) || []
 
     // 计算tableItem宽度
     const windowWidth = wx.getSystemInfoSync().windowWidth
-    const tableWidthSum = tableHeader.map(v => v.width).reduce((prev, next) => {
+    const tableWidthSum = tableHeader.length && tableHeader.map(v => v.width).reduce((prev, next) => {
       return prev + next;
     })
     if (tableWidthSum < windowWidth * 2) {

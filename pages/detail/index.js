@@ -11,8 +11,8 @@ function formatTimeFn(mss){
 }
 
 const hostMap = {
-  home: 'http://119.96.189.81:7788/images/',
-  dark: 'http://119.96.189.81:7788/dark-images/'
+  home: 'http://1.94.7.83:7788/coc/images/',
+  dark: 'http://1.94.7.83:7788/coc/dark-images/'
 }
 
 Page({

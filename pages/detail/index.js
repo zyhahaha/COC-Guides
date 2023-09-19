@@ -73,17 +73,16 @@ Page({
     updateList.forEach(updateItemArr => {
       const obj = {}
       updateItemArr.forEach(item => {
+        const isIncludesNameTextFn = text => item.name.includes(text)
         obj[item.name] = item.value
 
-        if (item.name.includes('升级时间') && Number(item.value)) {
+        if (isIncludesNameTextFn('升级时间') && Number(item.value)) {
           const updateTime = Number(item.value * 1000)
           const updateText = formatTimeFn(updateTime)
           obj[item.name] = updateText
         }
-        if (item.name.includes('升级花费') && Number(item.value)) {
-          // if (Number(item.value) % 10000 === 0) {
-          //   obj[item.name] = `${item.value / 10000}万`
-          // }
+        
+        if ((isIncludesNameTextFn('升级花费') || isIncludesNameTextFn('升级费用')) && Number(item.value)) {
           if (Number(item.value) >= 10000) {
             obj[item.name] = `${item.value / 10000}万`
           }

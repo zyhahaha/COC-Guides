@@ -69,6 +69,12 @@ Page({
       })
     }
 
+    // 小博控制室特殊处理Header宽度
+    if (unitDetail.name === '小博控制室') {
+      tableHeader[0].width = 120 * 2
+      tableHeader[1].width = (windowWidth - 120) * 2
+    }
+
     // tableDataList
     updateList.forEach(updateItemArr => {
       const obj = {}

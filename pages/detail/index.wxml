@@ -21,6 +21,6 @@
         data="{{ tableDataList }}" 
         stripe="{{ true }}"
         border="{{ false }}"
-        height="{{ tableHeight - 5 + 'px' }}"
+        height="{{ tableHeight - 200 + 'px' }}"
     />
 </view>

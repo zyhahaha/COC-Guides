@@ -230,7 +230,7 @@ Page({
     })
   },
   getTeamRaceFn() {
-    // 每月22号下午16点开始；28号16点结束
+    // 每月22号下午16点开始；28号16点结束；为期6天
     let teamRaceTitle = '竞赛开始'
     let teamRaceCountdown = ''
 
@@ -242,7 +242,7 @@ Page({
 
     if ((dateNumber > 22 && dateNumber < 28) || (dateNumber === 22 && hours >= 16) || (dateNumber === 28 && hours < 16)) {
       teamRaceTitle = '竞赛结束'
-      let countdownDays = Math.abs(dateNumber - 6)
+      let countdownDays = Math.abs(dateNumber - 22 - 5)
       let countdownHours = 24 - hours
       let countdownMinutes = 60 - minutes
       let countdownSeconds = 60 - seconds

@@ -8,7 +8,7 @@
         </view>
     </view>
     <t-grid column="{{4}}" theme="card" wx:if="{{ searchResultList.length > 0 }}">
-        <t-grid-item wx:for="{{ searchResultList}}" wx:key="index" text="{{ item.name }}" image="{{ 'https://cdn.jsdelivr.net/gh/zyhahaha/assets@master/images/coc/images/' + item.name + '.png' }}" bindtap="onDetail" data-content="{{item}}" />
+        <t-grid-item wx:for="{{ searchResultList}}" wx:key="index" text="{{ item.name }}" image="{{ 'https://gitee.com/zyhahaha/assets/raw/master/images/coc/images/' + item.name + '.png' }}" bindtap="onDetail" data-content="{{item}}" />
     </t-grid>
     <!-- 搜索结果 -->
     <view wx:else class="result">

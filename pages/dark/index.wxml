@@ -11,7 +11,7 @@
     <t-tabs sticky swipeable value="{{ tabValue }}" bind:change="onTabsChange">
         <t-tab-panel label="{{ item.name }}" value="{{ index }}" wx:for="{{ unitData }}" wx:key="index">
             <t-grid column="{{4}}" theme="card">
-                <t-grid-item wx:for="{{ item.children }}" wx:key="index" text="{{ item.name }}" image="{{ 'http://1.94.7.83:7788/coc/dark-images/' + item.name + '.png' }}" bindtap="onDetail" data-content="{{item}}" />
+                <t-grid-item wx:for="{{ item.children }}" wx:key="index" text="{{ item.name }}" image="{{ 'https://cdn.jsdelivr.net/gh/zyhahaha/assets@master/images/coc/dark-images/' + item.name + '.png' }}" bindtap="onDetail" data-content="{{item}}" />
             </t-grid>
         </t-tab-panel>
     </t-tabs>

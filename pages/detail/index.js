@@ -11,8 +11,8 @@ function formatTimeFn(mss){
 }
 
 const hostMap = {
-  home: 'http://1.94.7.83:7788/coc/images/',
-  dark: 'http://1.94.7.83:7788/coc/dark-images/'
+  home: 'https://cdn.jsdelivr.net/gh/zyhahaha/assets@master/images/coc/images/',
+  dark: 'https://cdn.jsdelivr.net/gh/zyhahaha/assets@master/images/coc/dark-images/'
 }
 
 Page({

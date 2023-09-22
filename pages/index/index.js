@@ -187,16 +187,20 @@ Page({
     if ((dateNumber < 11 && dateNumber > 1) || (dateNumber === 1 && hours >= 16) || (dateNumber === 11 && hours < 16)) {
       teamLeagueTitle = '联赛结束'
       let countdownDays = Math.abs(dateNumber - 11)
-      let countdownHours = 24 - hours
+      let countdownHours = 16 - hours
       let countdownMinutes = 60 - minutes
       let countdownSeconds = 60 - seconds
-      countdownHours = countdownHours + 16
+      // countdownHours = countdownHours + 16
 
       if (seconds > 0) countdownMinutes = countdownMinutes - 1
       if (minutes > 0) countdownHours = countdownHours - 1
       if (countdownHours >= 24) {
         countdownDays = countdownDays + 1
         countdownHours = countdownHours - 24
+      }
+      if (countdownHours < 0) {
+        countdownDays = countdownDays - 1
+        countdownHours = countdownHours + 24
       }
 
       if (dateNumber === 11) {

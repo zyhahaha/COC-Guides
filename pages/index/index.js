@@ -240,7 +240,7 @@ Page({
     const minutes = nowDate.getMinutes()
     const seconds = nowDate.getSeconds()
 
-    if ((dateNumber > 21 && dateNumber < 28) || (dateNumber === 21 && hours >= 16) || (dateNumber === 28 && hours < 16)) {
+    if ((dateNumber > 22 && dateNumber < 28) || (dateNumber === 22 && hours >= 16) || (dateNumber === 28 && hours < 16)) {
       teamRaceTitle = '竞赛结束'
       let countdownDays = Math.abs(dateNumber - 6)
       let countdownHours = 24 - hours

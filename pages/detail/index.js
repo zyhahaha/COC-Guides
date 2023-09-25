@@ -11,8 +11,8 @@ function formatTimeFn(mss){
 }
 
 const hostMap = {
-  home: 'https://gitee.com/zyhahaha/assets/raw/master/images/coc/images/',
-  dark: 'https://gitee.com/zyhahaha/assets/raw/master/images/coc/dark-images/'
+  home: 'http://1.94.7.83:7788/coc/images/',
+  dark: 'http://1.94.7.83:7788/coc/dark-images/'
 }
 
 Page({

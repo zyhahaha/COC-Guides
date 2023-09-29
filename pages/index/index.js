@@ -2,6 +2,15 @@ import ActionSheet, { ActionSheetTheme } from 'tdesign-miniprogram/action-sheet/
 import { unitData } from '../../utils/data.js'
 import { levelOptions } from './libs/const.js'
 
+function getCurrentMonthDate() {
+  // 获取当前月有多少天
+  let date = new Date();
+  let year = date.getFullYear();
+  let month = date.getMonth() + 1;
+  let d = new Date(year, month, 0);
+  return d.getDate();
+}
+
 Page({
   data: {
     drawerVisible: false,
@@ -166,15 +175,6 @@ Page({
   },
   getTeamLeagueFn() {
     // 每月1号下午16点开始；11号16点结束
-    function getCurrentMonthDate() {
-      // 获取当前月有多少天
-      let date = new Date();
-      let year = date.getFullYear();
-      let month = date.getMonth() + 1;
-      let d = new Date(year, month, 0);
-      return d.getDate();
-    }
-
     let teamLeagueTitle = '联赛开始'
     let teamLeagueCountdown = ''
 
@@ -262,6 +262,9 @@ Page({
     } else {
       teamRaceTitle = '竞赛开始'
       let countdownDays = 21 - dateNumber
+      if (dateNumber > 28 || (dateNumber === 28 && hours >= 16)) {
+        countdownDays = getCurrentMonthDate() - dateNumber + 21
+      }
       let countdownHours = 24 - hours
       let countdownMinutes = 60 - minutes
       let countdownSeconds = 60 - seconds

@@ -210,16 +210,23 @@ Page({
     } else {
       teamLeagueTitle = '联赛开始'
       let countdownDays = getCurrentMonthDate() - dateNumber
-      let countdownHours = 24 - hours
+      let countdownHours = 16 - hours
       let countdownMinutes = 60 - minutes
       let countdownSeconds = 60 - seconds
-      countdownHours = countdownHours + 16
+      // countdownHours = countdownHours + 16
 
       if (seconds > 0) countdownMinutes = countdownMinutes - 1
       if (minutes > 0) countdownHours = countdownHours - 1
       if (countdownHours >= 24) {
         countdownDays = countdownDays + 1
         countdownHours = countdownHours - 24
+      }
+      if (countdownHours < 0) {
+        countdownDays = countdownDays - 1
+        countdownHours = countdownHours + 24
+      }
+      if (dateNumber === 1) {
+        countdownDays = 0
       }
       teamLeagueCountdown = `${countdownDays}天${countdownHours}小时${countdownMinutes}分`
     }
